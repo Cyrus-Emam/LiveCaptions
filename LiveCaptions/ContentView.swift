@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  LiveCaptions
 //
-//  Created by Cyrus Emam on 12/16/25.
+//  Created by Cyrus Emam on 11/30/25.
 //
 
 import SwiftUI
@@ -17,7 +17,7 @@ struct ContentView: View {
     // Accessibility / UX state
     @AppStorage("useDarkCaptionTheme") private var useDarkCaptionTheme: Bool = false
     @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding: Bool = false
-    @AppStorage("rotateForSpeaker") private var rotateForSpeaker: Bool = false
+    @AppStorage("rotateForSpeaker") private var rotateForSpeaker: Bool = false   // ⬅ NEW
 
     // For onboarding + settings
     @State private var showOnboarding: Bool = false
@@ -94,7 +94,7 @@ struct ContentView: View {
                     // SINGLE BOX WITH AUTO-SCROLL
                     ScrollViewReader { proxy in
                         ScrollView {
-                            LazyVStack(alignment: .leading, spacing: 8) {
+                            VStack(alignment: .leading, spacing: 8) {
                                 let staticLines = speech.captionLines
                                 let combinedLines: [String] = {
                                     if speech.currentLine.isEmpty {
@@ -135,7 +135,7 @@ struct ContentView: View {
                             .padding(.horizontal, 28)
                             .padding(.vertical, 24)
                             .frame(maxWidth: .infinity, alignment: .topLeading)
-                            .rotationEffect(rotateForSpeaker ? .degrees(180) : .degrees(0))
+                            .rotationEffect(rotateForSpeaker ? .degrees(180) : .degrees(0)) // ⬅ NEW
                         }
                         .background(
                             RoundedRectangle(cornerRadius: 16)
@@ -143,12 +143,12 @@ struct ContentView: View {
                                 .shadow(radius: 4)
                         )
                         .padding(.horizontal, 16)
-                        .onChange(of: speech.captionLines.count) { oldValue, newValue in
+                        .onChange(of: speech.captionLines.count) {
                             withAnimation(.easeOut(duration: 0.2)) {
                                 proxy.scrollTo("BOTTOM", anchor: .bottom)
                             }
                         }
-                        .onChange(of: speech.currentLine) { oldValue, newValue in
+                        .onChange(of: speech.currentLine) {
                             withAnimation(.easeOut(duration: 0.2)) {
                                 proxy.scrollTo("BOTTOM", anchor: .bottom)
                             }
@@ -259,11 +259,11 @@ struct ContentView: View {
             }
         }
         // ❗ Keep screen awake while transcribing
-        .onChange(of: speech.isTranscribing) { isOn in
+        .onChange(of: speech.isTranscribing) { _, isOn in
             UIApplication.shared.isIdleTimerDisabled = isOn
         }
         // Safety: if app leaves active state, re-enable idle timer
-        .onChange(of: scenePhase) { phase in
+        .onChange(of: scenePhase) { _, phase in
             if phase != .active {
                 UIApplication.shared.isIdleTimerDisabled = false
             }
@@ -405,4 +405,3 @@ struct ShareSheet: UIViewControllerRepresentable {
         // nothing to update
     }
 }
-

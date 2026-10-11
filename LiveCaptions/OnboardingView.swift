@@ -94,7 +94,7 @@ struct OnboardingView: View {
                             VStack(alignment: .leading, spacing: 4) {
                                 Text("Rotate captions toward you")
                                     .font(.headline)
-                                Text("Flip the captions 180° so they’re easier to read while the bottom of the phone faces the speaker. In the future, you can flip the captions in the Settings.")
+                                Text("Flip the captions 180° so they’re easier to read while the bottom of the phone faces the speaker.")
                                     .font(.footnote)
                                     .foregroundColor(.secondary)
                                     .fixedSize(horizontal: false, vertical: true)

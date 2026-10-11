@@ -102,7 +102,7 @@ final class SpeechManager: ObservableObject {
             try session.setCategory(.playAndRecord,
                                     mode: .videoChat,
                                     options: [
-                                        .allowBluetooth,    // allow Bluetooth headsets / AirPods as mic
+                                        .allowBluetoothHFP,    // allow Bluetooth headsets / AirPods as mic
                                         .defaultToSpeaker,  // if you ever add playback
                                         .duckOthers         // gently lower other audio
                                     ])
@@ -112,6 +112,7 @@ final class SpeechManager: ObservableObject {
         }
     }
 
+   
     // MARK: - Interruption Handling
 
     private func setupInterruptionObserver() {
@@ -120,33 +121,41 @@ final class SpeechManager: ObservableObject {
             object: AVAudioSession.sharedInstance(),
             queue: .main
         ) { [weak self] notification in
-            guard let self = self else { return }
-            self.handleAudioInterruption(notification: notification)
-        }
-    }
 
-    private func handleAudioInterruption(notification: Notification) {
-        guard let info = notification.userInfo,
-              let typeValue = info[AVAudioSessionInterruptionTypeKey] as? UInt,
-              let type = AVAudioSession.InterruptionType(rawValue: typeValue) else {
-            return
-        }
-
-        switch type {
-        case .began:
-            // As soon as a call / Siri / etc. begins, stop transcription cleanly.
-            if isTranscribing {
-                stopTranscribing()
+            // Extract the interruption type before entering the Task.
+            guard let typeValue = notification.userInfo?[
+                AVAudioSessionInterruptionTypeKey
+            ] as? UInt else {
+                return
             }
 
-        case .ended:
-            // Do NOT auto-resume; user will tap "Start Captioning" again.
-            break
+            Task { @MainActor [weak self] in
+                guard let self = self else { return }
 
-        @unknown default:
-            break
+                guard let type = AVAudioSession.InterruptionType(
+                    rawValue: typeValue
+                ) else {
+                    return
+                }
+
+                switch type {
+                case .began:
+                    // Stop captioning when a call or Siri interrupts audio.
+                    if self.isTranscribing {
+                        self.stopTranscribing()
+                    }
+
+                case .ended:
+                    // Do not automatically resume captioning.
+                    break
+
+                @unknown default:
+                    break
+                }
+            }
         }
     }
+
 
     // MARK: - Control
 
