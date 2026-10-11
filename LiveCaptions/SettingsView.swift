@@ -2,7 +2,7 @@
 //  SettingsView.swift
 //  LiveCaptions
 //
-//  Created by Cyrus Emam on 12/4/25.
+//  Created by Cyrus Emam on 10/11/26.
 //
 
 import SwiftUI

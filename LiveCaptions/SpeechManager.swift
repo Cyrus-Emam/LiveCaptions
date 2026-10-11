@@ -2,7 +2,7 @@
 //  SpeechManager.swift
 //  LiveCaptions
 //
-//  Created by Cyrus Emam on 11/30/25.
+//  Created by Cyrus Emam on 10/11/26.
 //
 
 import Foundation
