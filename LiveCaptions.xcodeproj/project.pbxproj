@@ -27,9 +27,7 @@
 		2C377E8D2EDD3E670068A3D7 /* LiveCaptions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveCaptions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C377E9A2EDD3E6A0068A3D7 /* LiveCaptionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiveCaptionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C377EA42EDD3E6A0068A3D7 /* LiveCaptionsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiveCaptionsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C4036F4307B6C6E00A75F2E /* LiveCaptions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = LiveCaptions.xcodeproj; sourceTree = "<group>"; };
 		2C7083D2307B710F00D7D10F /* LiveCaptions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = LiveCaptions.xcodeproj; sourceTree = "<group>"; };
-		2CA3C5AF307B6A9E0073561B /* LiveCaptions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LiveCaptions.xcodeproj; path = LiveCaptions/LiveCaptions.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -82,7 +80,6 @@
 				2C377E9D2EDD3E6A0068A3D7 /* LiveCaptionsTests */,
 				2C377EA72EDD3E6A0068A3D7 /* LiveCaptionsUITests */,
 				2C377E8E2EDD3E670068A3D7 /* Products */,
-				2C4036F1307B6C6E00A75F2E /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,30 +93,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2C4036F1307B6C6E00A75F2E /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				2CA3C5AF307B6A9E0073561B /* LiveCaptions.xcodeproj */,
-				2C4036F4307B6C6E00A75F2E /* LiveCaptions.xcodeproj */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
-		2C4036FA307B6C6E00A75F2E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		2C7083D8307B710F00D7D10F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		2CA3C5B0307B6A9E0073561B /* Products */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -236,14 +210,6 @@
 				{
 					ProductGroup = 2C7083D8307B710F00D7D10F /* Products */;
 					ProjectRef = 2C7083D2307B710F00D7D10F /* LiveCaptions.xcodeproj */;
-				},
-				{
-					ProductGroup = 2C4036FA307B6C6E00A75F2E /* Products */;
-					ProjectRef = 2C4036F4307B6C6E00A75F2E /* LiveCaptions.xcodeproj */;
-				},
-				{
-					ProductGroup = 2CA3C5B0307B6A9E0073561B /* Products */;
-					ProjectRef = 2CA3C5AF307B6A9E0073561B /* LiveCaptions.xcodeproj */;
 				},
 			);
 			projectRoot = "";
