@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  LiveCaptions
 //
-//  Created by Cyrus Emam on 11/30/25.
+//  Created by Cyrus Emam on 10/11/26.
 //
 
 import SwiftUI
@@ -37,8 +37,12 @@ struct ContentView: View {
         let captionBoxColor = useDarkCaptionTheme ? Color(white: 0.10) : Color(white: 0.97)
 
         // Lock state
-        let isLocked = !purchaseManager.isUnlocked && purchaseManager.isTrialExpired
-
+        // Removed for the demo.  Before publishing, replace with the next row:  let isLocked = !purchaseManager.isUnlocked && purchaseManager.isTrialExpired
+        
+        // Competition version: disable payment restrictions
+        let isLocked = false
+        
+        
         ZStack {
             backgroundColor
                 .ignoresSafeArea()
@@ -81,7 +85,9 @@ struct ContentView: View {
                         }
                     }
 
-                    // Trial status banner (only while trial is active and not unlocked)
+                    // Trial status banner (only while trial is active and not unlocked) - commented out for the demo
+                    
+                    /*
                     if !purchaseManager.isUnlocked,
                        let daysLeft = purchaseManager.daysRemainingInTrial {
                         TrialBanner(
@@ -90,6 +96,7 @@ struct ContentView: View {
                         )
                         .padding(.horizontal, 16)
                     }
+                    */
 
                     // SINGLE BOX WITH AUTO-SCROLL
                     ScrollViewReader { proxy in
@@ -251,8 +258,9 @@ struct ContentView: View {
         }
         .onAppear {
             speech.requestAuthorization()
-            // Start trial on first real use
-            purchaseManager.startTrialIfNeeded()
+            
+            // Start trial on first real use - next line commented out for demo.  Remove before publishing
+            // purchaseManager.startTrialIfNeeded()
 
             if !hasCompletedOnboarding {
                 showOnboarding = true

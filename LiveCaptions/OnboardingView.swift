@@ -128,14 +128,20 @@ struct OnboardingView: View {
                         Divider()
                             .padding(.vertical, 8)
 
-                        Text("Free to try for 30 days")
+                        
+                        // Below section of the first run was removed for the free demo```
+                        /*
+                        
+                         Text("Free to try for 30 days")
                             .font(.headline)
 
                         Text("After your free trial, LiveCaptions is a one-time $4.99 purchase. No subscriptions and no ads.")
                             .font(.subheadline)
                             .foregroundColor(.secondary)
 
-                        Spacer()
+                        */
+                        
+                         Spacer()
                     }
                     .padding()
                     .tag(3)
