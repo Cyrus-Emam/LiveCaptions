@@ -25,7 +25,7 @@ final class PurchaseManager: ObservableObject {
     // StoreKit 2 products
     private var products: [Product] = []
 
-    /// 🔴 IMPORTANT:
+    
     /// Change this to match the Product ID of your non-consumable IAP
     /// in App Store Connect (e.g. "com.yourname.LiveCaptions.unlock").
     private let productID = "com.yourcompany.livecaptions.unlock"
