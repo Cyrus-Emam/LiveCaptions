@@ -19,8 +19,8 @@ I was inspired by how closed captions make television easier to understand. Live
 - **Readable transcript:** Recent captions are emphasized while older lines appear lighter, with automatic scrolling.
 - **Simple controls:** Start or stop captioning, clear the screen, and share the transcript.
 - **First-run guide:** An introduction to help new users get started.
-
-> **Language support:** Speech recognition capabilities depend on the languages supported and configured in the installed version of the app and on the device. Multilingual accessibility is an important design goal; verify the current build's available languages before describing specific language support.
+- **Language support:** Multiple languages are supported.
+- **Copy & Save file:** Ability to share the text and save the file locally. 
 
 ## Built with
 
@@ -47,13 +47,12 @@ I was inspired by how closed captions make television easier to understand. Live
 4. Grant microphone and speech-recognition permissions when prompted.
 5. Tap **Start Captioning** and speak near the phone.
 
-The competition version is intended to allow access to captioning without a payment or trial screen.
 
 ## Privacy and limitations
 
 LiveCaptions needs microphone and speech-recognition permissions to transcribe speech. Speech recognition accuracy can vary with background noise, speaker clarity, language, and device capabilities. The app is an accessibility aid, not a replacement for hearing aids or professional captioning services.
 
-Before making public privacy claims, review the exact behavior of the current speech-recognition implementation and any applicable Apple services.
+LiveCaptions does not create any copies of the text outside of what is needed by Apple Corporation systems to handle speech-recognition.
 
 ## Development process and AI assistance
 
@@ -63,10 +62,9 @@ I used **ChatGPT as a development assistant** to explore Swift and SwiftUI examp
 
 ## Project status
 
-LiveCaptions is a working iPhone project being prepared for the **Congressional App Challenge**. Features and language availability should be verified against the latest build.
+LiveCaptions is a working iPhone application. 
 
 ## Author
 
-**Cyrus Emam**  
-Student developer  
+**Cyrus Emam**   
 GitHub: [@Cyrus-Emam](https://github.com/Cyrus-Emam)
