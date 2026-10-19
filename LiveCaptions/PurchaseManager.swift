@@ -5,7 +5,7 @@
 //  Created by Cyrus Emam on 10/11/26.
 //
 
-import SwiftUI      // needed for ObservableObject / @Published
+import SwiftUI      
 import StoreKit
 import Foundation
 import Combine
@@ -27,7 +27,6 @@ final class PurchaseManager: ObservableObject {
 
     
     /// Change this to match the Product ID of your non-consumable IAP
-    /// in App Store Connect (e.g. "com.yourname.LiveCaptions.unlock").
     private let productID = "com.yourcompany.livecaptions.unlock"
 
     init() {
