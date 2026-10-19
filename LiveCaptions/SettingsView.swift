@@ -64,12 +64,12 @@ struct SettingsView: View {
                 // ----------------------------
                 Section(header: Text("Privacy & Support")) {
 
-                    // Replace URLs with your actual hosted pages
-                    Link(destination: URL(string: "https://sites.google.com/view/insaight/privacy-policy")!) {
+                    // URLs to be updated before publishing to app store 
+                    Link(destination: URL(string: "https://sites.google.com/view/livecaptions/privacy-policy")!) {
                         Label("Privacy Policy", systemImage: "doc.text")
                     }
 
-                    Link(destination: URL(string: "https://sites.google.com/view/insaight/support")!) {
+                    Link(destination: URL(string: "https://sites.google.com/view/livecaptions/support")!) {
                         Label("Support", systemImage: "doc.text")
                     }
                 }
