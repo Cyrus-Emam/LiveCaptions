@@ -282,7 +282,6 @@ final class SpeechManager: ObservableObject {
     private func restartRecognitionSegment() {
         guard isTranscribing else { return }
 
-        // IMPORTANT: do NOT endAudio here; we keep the audio stream alive.
         recognitionTask?.cancel()
         recognitionTask = nil
 
