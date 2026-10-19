@@ -35,9 +35,9 @@ I was inspired by how closed captions make television easier to understand. Live
 
 **Designing for older adults.** I prioritized legible typography, high contrast, and straightforward controls rather than a complex interface.
 
-**Supporting face-to-face use.** I explored device positioning and display orientation so captions can be read in different conversation setups. Rotating the display does not, by itself, change microphone direction or guarantee better audio capture.
+**Supporting face-to-face use.** I explored device positioning and display orientation so captions can be read in different conversation setups. 
 
-**Considering multilingual families.** My grandmothers' language backgrounds motivated me to explore multilingual speech recognition and its device-dependent limitations.
+**Considering multilingual families.** My grandmothers' language backgrounds motivated me to explore multilingual speech recognition.
 
 ## Getting started
 
@@ -62,7 +62,7 @@ I used **ChatGPT as a development assistant** to explore Swift and SwiftUI examp
 
 ## Project status
 
-LiveCaptions is a working iPhone application. 
+LiveCaptions is a working iPhone application. My intent is to make this app available via Apple App Store to help anyone that needs it. Until then, the PurchaseManager function has been commented out.
 
 ## Author
 
